@@ -6,9 +6,9 @@ data "openstack_images_image_v2" "Ubuntu1804" {
 
 ### Deploy Ubuntu1804 with only provider network ###
 
-resource "openstack_compute_instance_v2" "openstack-Ubuntu1804" {
-  name        = "openstack-Ubuntu1804"
-  flavor_name = "m4.small"
+resource "openstack_compute_instance_v2" "vm" {
+  name        = "${var.vm_name}"
+  flavor_name = "${var.flavor_name}"
   key_pair    = "${var.OS_KEYPAIR}"
 
   lifecycle {
